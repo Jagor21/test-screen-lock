@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             PowerManager.FULL_WAKE_LOCK or PowerManager.ACQUIRE_CAUSES_WAKEUP,
             "MyApp:MyWakelockTag"
         )
-        checkDeviceAdmin()
+//        checkDeviceAdmin()
 
         findViewById<Button>(R.id.btn_lock).setOnClickListener {
             val hourLock = findViewById<EditText>(R.id.et_hour_lock).text.toString().toInt()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             alarmManager.cancel(this.screenOffIntent)
             alarmManager.setRepeating(
                 AlarmManager.RTC_WAKEUP,
-                calendar.timeInMillis + SCREEN_OFF_DELAY,
+                calendar.timeInMillis,
                 AlarmManager.INTERVAL_DAY,
                 this.screenOffIntent
             )
