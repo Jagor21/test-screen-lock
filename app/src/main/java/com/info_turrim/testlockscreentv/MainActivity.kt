@@ -151,25 +151,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun scheduleScreenOnWorker(hour: Int = 7, minutes: Int = 0) {
-        val workRequest: WorkRequest = PeriodicWorkRequestBuilder<ScreenOnWorker>(
-            1, TimeUnit.DAYS
-        )
-            .setInitialDelay(calculateInitialDelay(hour, minutes), TimeUnit.MILLISECONDS)
-            .build()
-
-        WorkManager.getInstance(applicationContext).enqueue(workRequest)
-    }
-
-    private fun scheduleScreenOffWorker() {
-        val workRequest: WorkRequest = PeriodicWorkRequestBuilder<ScreenOffWorker>(
-            1, TimeUnit.DAYS
-        )
-            .setInitialDelay(1 * 10 * 1000L, TimeUnit.MILLISECONDS)
-            .build()
-
-        WorkManager.getInstance(applicationContext).enqueue(workRequest)
-    }
+//    private fun scheduleScreenOnWorker(hour: Int = 7, minutes: Int = 0) {
+//        val workRequest: WorkRequest = PeriodicWorkRequestBuilder<ScreenOnWorker>(
+//            1, TimeUnit.DAYS
+//        )
+//            .setInitialDelay(calculateInitialDelay(hour, minutes), TimeUnit.MILLISECONDS)
+//            .build()
+//
+//        WorkManager.getInstance(applicationContext).enqueue(workRequest)
+//    }
+//
+//    private fun scheduleScreenOffWorker() {
+//        val workRequest: WorkRequest = PeriodicWorkRequestBuilder<ScreenOffWorker>(
+//            1, TimeUnit.DAYS
+//        )
+//            .setInitialDelay(1 * 10 * 1000L, TimeUnit.MILLISECONDS)
+//            .build()
+//
+//        WorkManager.getInstance(applicationContext).enqueue(workRequest)
+//    }
 
     private fun calculateInitialDelay(hour: Int = 7, minutes: Int = 0): Long {
         val currentTimeMillis = System.currentTimeMillis()

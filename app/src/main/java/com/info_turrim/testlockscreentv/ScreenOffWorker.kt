@@ -10,18 +10,18 @@ import kotlinx.coroutines.withContext
 
 class ScreenOffWorker(
     private val context: Context,
-    params: WorkerParameters
-) : CoroutineWorker(context, params) {
-
-    override suspend fun doWork(): Result= withContext(Dispatchers.IO) {
-        try {
-            val devicePolicyManager =
-                getSystemService(context, DevicePolicyManager::class.java) as DevicePolicyManager
-            devicePolicyManager.lockNow()
-        } catch (e: Exception) {
-            Result.failure()
-        }
-
-        Result.success()
-    }
-}
+    params: WorkerParameters)
+//    : CoroutineWorker(context, params) {
+//
+//    override suspend fun doWork(): Result= withContext(Dispatchers.IO) {
+////        try {
+////            val devicePolicyManager =
+////                getSystemService(context, DevicePolicyManager::class.java) as DevicePolicyManager
+////            devicePolicyManager.lockNow()
+////        } catch (e: Exception) {
+////            Result.failure()
+////        }
+////
+////        Result.success()
+//    }
+//}
